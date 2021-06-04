@@ -26,13 +26,14 @@ basic.forever(function () {
 	
 })
 ```
-## Step 3 set the button press to work.
+## Step 3 Set the button press to work and let the LED's be random colours.
 First open the "input" tab and then place the "on button press" block in the workspace.
 Chose a button (default A) to use.
-Next go to the "neopixal" tab and get the "show strip colour"
+Next go to the "neopixal" tab and get the "strip show colour" block then go back to the "neopixal" then "more" tab and get the "red 255 Green 255 blue 255" tab and place it in the colour dropdown box of the "strip show colour" block.
+we need to replace each of the "255" numbers in the "red green blue" block with the "pick random 0 to 10" block from the "math" tab.
+Change the numbers in the "pick random 0 to 10" block from "0 to 10" to "0 to 255"
 
-## All code
-
+```block
 input.onButtonPressed(Button.A, function () {
     strip.showColor(neopixel.rgb(randint(0, 255), randint(0, 255), randint(0, 255)))
 })
@@ -43,4 +44,5 @@ strip.setBrightness(50)
 basic.forever(function () {
 	
 })
+```
 
